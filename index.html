@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nhạc cá nhân</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="app grid__full-width" style="background-image: url(./assets/img/themeBgs/listTheme1/theme1.svg)">
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar__logo">
+        <a href="" class="navbar__logo-link">
+          <img src="./assets/img/logos/main-logo.svg" alt="">
+        </a>
+      </div>
+      <div class="navbar__nav">
+        <ul class="navbar__nav-list">
+          <li class="navbar__item navbar__item-main active">
+            <a href="#" class="navbar__item-link">
+              <i class="fa-solid fa-icons"></i>
+              <span>Cá nhân</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-main">
+            <a href="#" class="navbar__item-link">
+              <i class="fa-solid fa-record-vinyl"></i>
+              <span>Khám phá</span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-main">
+            <a href="#" class="navbar__item-link">
+              <i class="fa-solid fa-chart-simple"></i>
+              <Span>ZingChart</Span>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-main">
+            <a href="#" class="navbar__item-link">
+              <i class="fa-solid fa-radio"></i>
+              <span>Radio</span>
+              <div class=" radio__live radio__live-nav">
+                <p>LIVE</p>
+              </div>
+            </a>
+          </li>
+          <li class="navbar__item navbar__item-main">
+            <a href="#" class="navbar__item-link">
+              <i class="fa-regular fa-square-caret-up"></i>
+              <span>Theo dõi</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar__subnav has-mask">
+        <ul class="navbar__subnav-list">
+          <a href="" class="navbar__item-link subnav__ỉtem">
+            <li class="navbar__item">
+              <i class="fa-solid fa-music"></i>
+              <span>Nhạc mới</span>
+            </li>
+          </a>
+          <a href="" class="navbar__item-link subnav__ỉtem">
+            <li class="navbar__item">
+              <i class="fa-solid fa-icons"></i>
+              <span>Thể loại</span>
+            </li>
+          </a>
+          <a href="" class="navbar__item-link subnav__ỉtem">
+            <li class="navbar__item">
+              <i class="fa-solid fa-ranking-star"></i>
+              <span>Top 100</span>
+            </li>
+          </a>
+          <a href="" class="navbar__item-link subnav__ỉtem">
+            <li class="navbar__item">
+              <i class="fa-solid fa-clapperboard"></i>
+              <span>MV</span>
+            </li>
+          </a>
+        </ul>
+        <div class="navbar__subnav-login">
+          <span>Đăng nhập để khám phá playlist dành riêng cho bạn</span>
+          <button>Đăng nhập</button>
+        </div>
+        <div class="navbar__subnav-login">
+          <span>Đăng nhập để khám phá playlist dành riêng cho bạn</span>
+          <button>Đăng nhập</button>
+        </div>
+        <div class="library">
+          <div class="library__header library__item">
+            <span>THƯ VIỆN</span>
+            <i class="fa-solid fa-pen"></i>
+          </div>
+          <div class="library__song library__item">
+            <a href="#" class="library__item-link">
+              <i class="fa-solid fa-music"></i>
+              <span>Bài hát</span>
+            </a>
+          </div>
+          <div class="library__playlist library__item">
+            <a href="#" class="library__item-link">
+              <i class="fa-solid fa-file-audio"></i>
+              <span>Playlist</span>
+            </a>
+          </div>
+          <div class="library__time library__item">
+            <a href="#" class="library__item-link">
+              <i class="fa-solid fa-clock"></i>
+              <span>Gần đây</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar__new-playlist">
+        <a href="" class="navbar__new-playlist--link">
+          <i class="fa-solid fa-plus"></i>
+          <span>Tạo playlist mới</span>
+        </a>
+      </div>
+    </div>
+    <!-- Header-->
+    <div class="header">
+      <div class="header__search">
+        <i class="fa-solid fa-arrow-left"></i>
+        <i class="fa-solid fa-arrow-right"></i>
+        <div class="header__search-box">
+          <i class="fa-solid fa-magnifying-glass" style="opacity: 0.6;"></i>
+          <input type="text" class="header__search-input" placeholder="Tìm kiếm tên bài hát, nghệ sĩ, lời bài hát...">
+          <div class="header__search-history">
+            <h2>Đề xuất cho bạn</h2>
+            <ul class="header__search-history-list">
+              <li class="header__search-history-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="">Tình bạn diệu kỳ</a>
+              </li>
+              <li class="header__search-history-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="">Bên trên tầng lầu</a>
+              </li>
+              <li class="header__search-history-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="">I Do</a>
+              </li>
+              <li class="header__search-history-item">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="">See you again</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__navbar">
+        <div class="header__navbar-item">
+          <i class="fa-solid fa-shirt header__navbar-ic-themes"></i>
+        </div>
+        <div class="header__navbar-item">
+          <i class="fa-solid fa-upload"></i>
+        </div>
+        <div class="header__navbar-item header__navbar-ic-setting">
+          <i class="fa-solid fa-gear"></i>
+          <div class="header__navbar-item-setting">
+            <div class="setting__nav">
+              <div class="setting__item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Danh sách chặn</span>
+              </div>
+              <div class="setting__item">
+                <i class="fa-solid fa-record-vinyl"></i>
+                <span>Chất lượng nhạc</span>
+                <i class="setting__item-arrow fa-solid fa-chevron-right"></i>
+              </div>
+              <div class="setting__item">
+                <i class="fa-regular fa-circle-play"></i>
+                <span>Trình phát nhạc</span>
+                <i class="setting__item-arrow fa-solid fa-chevron-right"></i>
+              </div>
+            </div>
+            <div class="setting__subnav">
+              <div class="setting__item">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <span>Giới thiệu</span>
+              </div>
+              <div class="setting__item">
+                <i class="fa-regular fa-flag"></i>
+                <span>Góp ý</span>
+              </div>
+              <div class="setting__item">
+                <i class="fa-solid fa-phone"></i>
+                <span>Liên hệ</span>
+              </div>
+              <div class="setting__item">
+                <i class="fa-solid fa-rectangle-ad"></i>
+                <span>Quảng cáo</span>
+              </div>
+              <div class="setting__item">
+                <i class="fa-solid fa-receipt"></i>
+                <span>Thỏa thuận sử dụng</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header__navbar-item">
+          <i class="fa-regular fa-user"></i>
+        </div>
+      </div>
+    </div>
+    <!-- Container -->
+    <div class="container">
+
+      <!-- Navbar-Home  -->
+      <div class="container__tab container__tab-home show">
+        <div class="user">
+          <div class="layout-img"
+            style="background: url(./assets/img/User/Avatar.png) no-repeat center center / cover;"></div>
+          <div class="user__info">
+            <img src="./assets/img/User/Avatar.png" alt="" class="user__img">
+            <h1>Lưu Tuấn Thành</h1>
+          </div>
+        </div>
+        <div class="content">
+          <div class="content__menu">
+            <ul class="content__menu-list">
+              <li class="content__menu-item active">TỔNG QUAN</li>
+              <li class="content__menu-item">BÀI HÁT</li>
+              <li class="content__menu-item">PLAYLIST</li>
+              <li class="content__menu-item">ALBUM</li>
+              <li class="content__menu-item">MV</li>
+              <li class="content__menu-item">NGHỆ SĨ</li>
+              <li class="content__menu-item">TẢI LÊN</li>
+            </ul>
+          </div>
+          <div class="content__wrap">
+            <!-- Tab home -->
+            <div class="content__tab tab__home show">
+              <div class="content__header">
+                <a href="#" class="content__header-link content__header-link-home">
+                  <h3>Bài hát</h3>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <div class="content__header-nav">
+                  <div class="content__header-nav--upload content__header-nav-item">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Tải lên</span>
+                  </div>
+                  <div class="content__header-nav--transmit content__header-nav-item">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Phát tất cả</span>
+                  </div>
+                </div>
+              </div>
+              <div class="content__playmusic content__section">
+                <div class="content__playmusic-slide">
+                  <img src="./assets/img/slides/slide1.jpg" alt="">
+                </div>
+                <div class="content__playmusic-list">
+
+                </div>
+              </div>
+              <div class="content__playlist content__item-wrap content__section content__arrow">
+                <div class="content__playlist-header content__header">
+                  <a href="#" class="content__header-link content__header-link-home">
+                    <span class="content__header-link-label">Playlist</span>
+                    <i class="content__header-link-ic fa-solid fa-chevron-right"></i>
+                  </a>
+                  <div class="content__playlist-ic content__icon-arrow--LR">
+                    <i class="fa-solid fa-angle-left item_prev"></i>
+                    <i class="fa-solid fa-angle-right item_next"></i>
+                  </div>
+                </div>
+                <div class="content__body">
+                  <div class="col content__playlist-body">
+                    <div class="row__item row__column-5">
+                      <div class="row__item-add-playlist">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Tạo playlist mới</span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="content__album content__item-wrap content__section content__arrow">
+                <div class="content__album-header content__header">
+                  <a href="#" class="content__header-link content__header-link-home">
+                    <span class="content__header-link-label">Album</span>
+                    <i class="content__header-link-ic fa-solid fa-chevron-right"></i>
+                  </a>
+                  <div class="content__album-ic content__icon-arrow--LR">
+                    <i class="fa-solid fa-angle-left item_prev"></i>
+                    <i class="fa-solid fa-angle-right item_next"></i>
+                  </div>
+                </div>
+                <div class="content__body">
+                  <div class="col content__album-body ">
+
+                  </div>
+                </div>
+              </div>
+              <div class="content__mv content__item-wrap content__section content__arrow">
+                <div class="content__mv-header content__header">
+                  <a href="#" class="content__header-link content__header-link-home">
+                    <span class="content__header-link-label">MV</span>
+                    <i class="content__header-link-ic fa-solid fa-chevron-right"></i>
+                  </a>
+                  <div class="content__mv-ic content__icon-arrow--LR">
+                    <i class="fa-solid fa-angle-left item_prev"></i>
+                    <i class="fa-solid fa-angle-right item_next"></i>
+                  </div>
+                </div>
+                <div class="content__body">
+                  <div class="col content__mv-body">
+
+                  </div>
+                </div>
+              </div>
+              <div class="content__artist content__item-wrap content__section content__arrow">
+                <div class="content__artist-header content__header">
+                  <a href="#" class="content__header-link content__header-link-home">
+                    <span class="content__header-link-label">Nghệ sĩ</span>
+                    <i class="content__header-link-ic fa-solid fa-chevron-right"></i>
+                  </a>
+                  <div class="content__artist-ic content__icon-arrow--LR">
+                    <i class="fa-solid fa-angle-left item_prev"></i>
+                    <i class="fa-solid fa-angle-right item_next"></i>
+                  </div>
+                </div>
+                <div class="content__body fullHeight">
+                  <div class="content__artist-body col">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab song -->
+            <div class="content__tab tab__song">
+              <div class="content__header">
+                <a href="#" class="content__header-link">
+                  <h3>Bài hát</h3>
+                </a>
+                <div class="content__header-nav">
+                  <div class="content__header-nav--upload content__header-nav-item">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Tải lên</span>
+                  </div>
+                  <div class="content__header-nav--transmit content__header-nav-item">
+                    <i class="fa-solid fa-play"></i>
+                    <span>Phát tất cả</span>
+                  </div>
+                </div>
+              </div>
+              <div class="content__playmusic fullHeight">
+                <div class="content__playmusic-list content__playmusic-list-menu ">
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab playlist -->
+            <div class="content__tab tab__playlist">
+              <div class="content__playlist-header content__header">
+                <a href="#" class="content__playlist-header-link content__header-link">
+                  <span class="content__header-link-label">Playlist</span>
+                </a>
+              </div>
+              <div class="content__body fullHeight">
+                <div class="col content__playlist-body content__playlist-body-menu wrap">
+                  <div class="row__item row__column-5">
+                    <div class="row__item-add-playlist">
+                      <i class="fa-solid fa-plus"></i>
+                      <span>Tạo playlist mới</span>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab album -->
+            <div class="content__tab tab__album content__arrow">
+              <div class="content__album-header content__header">
+                <a href="#" class="content__album-header-link content__header-link">
+                  <span class="content__header-link-label">Album</span>
+                </a>
+              </div>
+              <div class="content__body fullHeight">
+                <div class="col content__album-body content__album-body-menu wrap">
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab mv -->
+            <div class="content__tab tab__mv">
+              <div class="content__mv-header content__header">
+                <a href="#" class="content__mv-header-link content__header-link">
+                  <span class="content__header-link-label">MV</span>
+                </a>
+              </div>
+              <div class="content__body fullHeight">
+                <div class="col content__mv-body content__mv-body-menu wrap">
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab artist -->
+            <div class="content__tab tab__artist">
+              <div class="content__artist-header content__header">
+                <a href="#" class="content__artist-header-link content__header-link">
+                  <span class="content__header-link-label">Nghệ sĩ</span>
+                </a>
+              </div>
+              <div class="content__body fullHeight">
+                <div class="content__artist-body col content__artist-body-menu wrap">
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab upload -->
+            <div class="content__tab tab__upload">
+              <div class="content__upload-header content__header">
+                <a href="#" class="content__upload-header-link content__header-link">
+                  <span class="content__header-link-label">Danh sách tải lên</span>
+                </a>
+              </div>
+              <div class="content__body upload__content-height">
+                <div class="content__upload-body col content__upload-body-menu">
+                  <i class="fa-solid fa-music"></i>
+                  <p>
+                    Không có bài hát tải lên!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <div class="footer">
+
+        </div>
+      </div>
+
+      <!-- Navbar-Khám phá -->
+      <div class="container__tab container__tab-discover">
+        <div class="content mt-30">
+          <!-- Khám phá -> Slider -->
+         <div class="mb-30">
+          <div class="content__tab-item content__slider-rapper content__arrow">
+            <div class="content__body fullHeight m0">
+              <div class="content__slider-body col">
+
+              </div>
+              <div class="following__slider-action">
+                <i class="fa-solid fa-chevron-left item_prev"></i>
+                <i class="fa-solid fa-chevron-right item_next"></i>
+              </div>
+            </div>
+          </div>
+         </div>
+
+          <!-- Khám phá -> Có thể bạn muốn nghe -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá -> Lựa chọn hôm nay -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá -> XONE CORNER -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá -> Vì bạn đã nghe -->
+          <div class="content content__radio-wrap reset-p">
+            
+          </div>
+
+          <!-- Khám phá -> Radio nổi bật -->
+          <div class="container__tab-radio content__section content__arrow">
+            <div class="content content__radio reset-p">
+              <div class="content__playlist-header content__header mlrt-0">
+                <a href="#" class="content__playlist-header-link content__header-link">
+                  <span class="content__header-link-label">Radio Nổi Bật</span>
+                </a>
+                <div class="content__artist-ic content__icon-arrow--LR">
+                  <i class="fa-solid fa-angle-left item_prev"></i>
+                  <i class="fa-solid fa-angle-right item_next"></i>
+                </div>
+              </div>
+              <div class="content__body fullHeight">
+                <div class="content__artist-body col content__music-list tab__radio-list">
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Khám phá -> Mixtape Yêu Thích -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá -> Nhạc mới mỗi ngày -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá-> Top 100 -->
+          <div class="content__tab-item content__tab-item-normal">
+
+          </div>
+
+          <!-- Khám phá -> Bạn đã nghe nhiều -->
+          <div class="content content__radio-wrap reset-p">
+                      
+          </div>
+
+          <!-- Khám phá -> Mới phát hành -->
+          <div class="content__tab-item content__tab-item-normal">
+            <div class="content__header m-mb-16">
+              <a href="#" class="content__header-link">Mới Phát Hành</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Navbar-> ZingChart -->
+      <div class="container__tab container__tab-zingchart">
+        <div class="content">
+          <div class="tab__zingchart-header mb-30">
+            <h3>#zingchart</h3>
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <div class="tab__zingchart-body">
+            <div class="content__music-list tab__zingchart-list">
+
+            </div>
+            <div class="show__full-zingchart btn__zingchart">
+              <button>Xem thêm</button>
+            </div>
+            <div class="not__show-full-zingchart btn__zingchart">
+              <button>Ẩn bớt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar -> Radio -->
+      <div class="container__tab container__tab-radio content__section">
+        <div class="content">
+          <!-- Radio => Radio nổi bật -->
+        <div class="content content__radio p-15 content__arrow">
+          <div class="content__playlist-header ml-15 content__header">
+            <a href="#" class="content__playlist-header-link content__header-link">
+              <span class="content__header-link-label">Radio Nổi Bật</span>
+            </a>
+            <div class="content__artist-ic content__icon-arrow--LR">
+              <i class="fa-solid fa-angle-left item_prev"></i>
+              <i class="fa-solid fa-angle-right item_next"></i>
+            </div>
+          </div>
+          <div class="content__body fullHeight m0">
+            <div class="content__artist-body col content__music-list tab__radio-list">
+
+            </div>
+          </div>
+        </div>
+        <!-- Radio => XONE RADIO -->
+        <div class="content content__radio-wrap p-15">
+         
+        </div>
+
+        <!-- Radio => Postcast (Vietcetera) -->
+        <div class="content content__radio-wrap p-15">
+          
+        </div>
+        
+        <!-- Radio => Nghe lại (On air) -->
+        <div class="content content__radio-wrap p-15 ">
+          
+        </div>
+
+        <!-- Radio => Khám phá post casd -->
+        <div class="content__tab-item content__tab-item-normal p-15">
+
+        </div>
+
+        </div>
+      </div>
+
+      <!-- Navbar -> Theo dõi -->
+      <div class="container__tab container__tab-follow content__section">
+        <div class="content">
+          <div class="following__navbar">
+            <div class="following__navbar-container">
+              <ul class="following__navbar-menu">
+                <li class="following__navbar-menu-item active">
+                  <span>VIỆT NAM</span>
+                </li>
+                <li class="following__navbar-menu-item">
+                  <span>US-UK</span>
+                </li>
+                <li class="following__navbar-menu-item">
+                  <span>K-POP</span>
+                </li>
+                <li class="following__navbar-menu-item">
+                  <span>HOA NGỮ</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="following__slider content__arrow">
+            <div class="content__body fullHeight">
+              <div class="content__artist-body col content__artist-body-menu following__slider-list">
+                
+              </div>
+            </div>
+
+            <div class="following__slider-action">
+              <i class="fa-solid fa-chevron-left item_prev"></i>
+              <i class="fa-solid fa-chevron-right item_next"></i>
+            </div>
+          </div>
+
+          <div class="following__post">
+
+            <div class="row__column-2 col row__item following__post-col">
+              
+            </div>
+            <div class="row__column-2 col row__item following__post-col">
+             
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Themes -->
+  <div class="themes grid__full-width">
+    <div class="themes__container">
+      <div class="themes__container-header">
+        <h1 class="content__header-link">Giao diện</h1>
+        <i class=" themes__container-header-close fa-solid fa-xmark" style="font-size: 2.4rem"></i>
+      </div>
+      <div class="themes__container-body">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Thông báo chưa cập nhật tính năng -->
+  <div class="toast"></div>
+
+  <!-- Player Song -->
+  <div class="player grid__full-width ">
+    <div class="player__container">
+
+      <div class="player__container-song">
+        <div class="player__song-inf media">
+          <div class="media__left">
+            <div class="player__song-thumb" style="background: url('./assets/img/playlists/playlist1.jpg') center center/cover no-repeat;">
+              
+            </div>
+          </div>
+          <div class="media__center">
+            <div class="player__song-body">
+              <div class="player_song-title">
+                <div class="player__title-animate">
+                  <div class="title__item">Cứ chill thôi</div>
+                  <div class="title__item">Cứ chill thôi</div>
+                </div>
+              </div>
+              <div class="player__song-author">
+               
+              </div>
+            </div>
+          </div>
+          <div class="media__right">
+           <div class="player__song-options">
+            <div class="player__song-btn">
+              <i class="fa-regular fa-heart icon__heart"></i>
+            </div>
+            <div class="player__song-btn">
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+           </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="player__control">
+        <div class="player__control-btn">
+          <div class="control__btn control__btn-random">
+            <i class="fa-solid fa-shuffle"></i>
+          </div>
+          <div class="control__btn control__btn-prev">
+            <i class="fa-solid fa-backward-step"></i>
+          </div>
+          <div class="control__btn row__item-play">
+            <i class="fa-solid fa-play control-btn-play" style="margin-left: 2px;"></i>
+            <i class="fa-solid fa-pause control-btn-pause"></i>
+          </div>
+          <div class="control__btn control__btn-next">
+            <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <div class="control__btn control__btn-repeat">
+            <i class="fa-solid fa-rotate-left"></i>
+          </div>
+        </div>
+        <div class="progess-block">
+          <span class="tracktime">0:00</span>
+          <span class="bar">
+            <span class="progess-fill progess-fill-song" style="width: 0%;"></span>
+          </span>
+          <input type="range" min="0" max="100" value="0" step="1" class="progress-block-input progess__time-song">
+          <span class="durationtime"></span>
+        </div>
+      </div>
+
+      <div class="player__option">
+        <div class="player__options-container">
+          <div class="player__option-btn">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div class="player__option-btn">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+          <div class="player__option-btn">
+            <i class="fa-solid fa-volume-high ic-main-vol" style="display: block"></i>
+          </div>
+          <div class="progess-block progess__volumn">
+            <span class="bar">
+              <span class="progess-fill progess-fill-volumn" style="width: 100%"></span>
+            </span>
+            <input type="range" min="0" max="100" value="100" class="progress-block-input progess__volumn-song">
+          </div>
+          <div class="player__list-icon">
+            <i class="fa-solid fa-music"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <audio id="audio" src=""></audio>
+
+</body>
+<script src="./data/theme.js"></script>
+<script src="./data/listThemes.js"></script>
+<script src="/data/fullSong.js"></script>
+<script src="./data/playList.js"></script>
+<script src="./data/albums.js"></script>
+<script src="./data/mvs.js"></script>
+<script src="./data/artitsts.js"></script>
+<script src="./data/normalPLayList.js"></script>
+<script src="./data/tabCharts/playlistCharts.js"></script>
+<script src="./data/tabExplore/radios.js"></script>
+<script src="./data/specialPlaylists.js"></script>
+<script src="./data/tabExplore/singerSlides.js"></script>
+<script src="./data/tabExplore/exploreSlides.js"></script>
+<script src="./data/tabFollowing/posts.js"></script>
+<script src="./main.js"></script>
+
+</html>
