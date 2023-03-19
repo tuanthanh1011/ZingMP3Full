@@ -64,6 +64,7 @@ const songTitleWrap = $('.player_song-title ');
 const THEME_STORAGE = 'THEME'
 const PLAYER__STORAGE_KEY = 'PLAYER'
 
+
 const app = {
 
   curIndexArraySong: 0,
@@ -79,7 +80,6 @@ const app = {
   isVolumeMin: false,
 
   config: JSON.parse(localStorage.getItem(PLAYER__STORAGE_KEY)) || {},
-
   themeLists: JSON.parse(localStorage.getItem(THEME_LIST_STORAGE_KEY)) || {},
   themes: JSON.parse(localStorage.getItem(THEME_STORAGE_KEY)) || {},
   themeKey: JSON.parse(localStorage.getItem(THEME_STORAGE)) || {},
@@ -216,9 +216,9 @@ const app = {
                     <div class="overlay">
                         <div class="row__item-img" style="background: url('${album.image}') no-repeat center/cover"></div>
                     <div class="row__item-action">
-                        <div class="row__item-action-ic row__item-heart>
-                        <i class="fa-regular fa-heart  icon__heart""></i>
-                    </div>
+                    <div class="row__item-action-ic row__item-heart">
+                    <i class="fa-regular fa-heart icon__heart"></i>
+                  </div>
                 <div class="row__item-action-ic row__item-play">
                     <i class="fa-solid fa-play"></i>
                 </div>
@@ -585,7 +585,7 @@ const app = {
     }
 
     songTitleWrap.style.width = titleItems[0].offsetWidth + 'px' // Chiều dài của title wrap
-    this.titleItemWidth = $('.title__item') 
+    this.titleItemWidth = $('.title__item')
     this.titleAnimate.cancel()
   },
 
@@ -679,13 +679,13 @@ const app = {
 
   animateTitle: function () {
     this.titleAnimate = playerTitleAnimate.animate([
-      {transform: `translateX(-${this.titleItemWidth.offsetWidth}px)`},
+      { transform: `translateX(-${this.titleItemWidth.offsetWidth}px)` },
     ],
-    {
-      direction: 'normal',
-      duration: 2000,
-      iterations: Infinity, // Số lần lặp lại hoạt hình
-    })
+      {
+        direction: 'normal',
+        duration: 2000,
+        iterations: Infinity, // Số lần lặp lại hoạt hình
+      })
     this.titleAnimate.pause()
     return this.titleAnimate
   },
@@ -709,7 +709,7 @@ const app = {
         e.stopPropagation()
       }
     })
-    
+
     _this.animateTitle() // tạo ra animate
 
     //Xử lý sự kiện click vào button apply và preview theme
@@ -890,7 +890,7 @@ const app = {
       _this.titleAnimate.play()
 
     }
-    
+
     // Khi song được pause
     audio.onpause = function () {
       btnPlay.classList.remove('playing')
@@ -916,47 +916,47 @@ const app = {
     // Xử lý khi click vào song (Tab tổng quan)
     playMusicList.onclick = function (e) {
       const songNode = e.target.closest('.content__playmusic-item:not(.active)')
-  
-        if (songNode && !e.target.closest('.content__playmusic-item-ic')) {
-          _this.indexSong = Number(songNode.dataset.index)
-          _this.loadCurrentSong()
-          _this.renderMusic(playMusicList, _this.curIndexArraySong)
-          _this.renderMusic(contentMenuSong, _this.curIndexArraySong)
-          _this.scrollToActiveSong()
-          audio.play()
-        }
-        if (e.target.closest('.icon__micro')) {
-          e.target.classList.toggle('icon__primary')
-        }
-        if (e.target.closest('.icon__heart')) {
-          var classListIc = e.target.classList
-          classListIc.contains('fa-solid') ? classListIc.replace('fa-solid', 'fa-regular') : classListIc.replace('fa-regular', 'fa-solid')
-          e.target.classList.toggle('icon__primary')
-        }
-        
+
+      if (songNode && !e.target.closest('.content__playmusic-item-ic')) {
+        _this.indexSong = Number(songNode.dataset.index)
+        _this.loadCurrentSong()
+        _this.renderMusic(playMusicList, _this.curIndexArraySong)
+        _this.renderMusic(contentMenuSong, _this.curIndexArraySong)
+        _this.scrollToActiveSong()
+        audio.play()
+      }
+      if (e.target.closest('.icon__micro')) {
+        e.target.classList.toggle('icon__primary')
+      }
+      if (e.target.closest('.icon__heart')) {
+        var classListIc = e.target.classList
+        classListIc.contains('fa-solid') ? classListIc.replace('fa-solid', 'fa-regular') : classListIc.replace('fa-regular', 'fa-solid')
+        e.target.classList.toggle('icon__primary')
+      }
+
     }
 
     // Xử lý khi click vào song (Tab bài hát)
     contentMenuSong.onclick = function (e) {
       const songNode = e.target.closest('.content__playmusic-item:not(.active)')
 
-        if (songNode && !e.target.closest('.content__playmusic-item-ic')) {
-          _this.indexSong = Number(songNode.dataset.index)
-          _this.loadCurrentSong()
-          _this.renderMusic(playMusicList, _this.curIndexArraySong)
-          _this.renderMusic(contentMenuSong, _this.curIndexArraySong)
-          _this.scrollToActiveSong()
-          audio.play()
-        }
-        if (e.target.closest('.icon__micro')) {
-          e.target.classList.toggle('icon__primary')
-        }
-        if (e.target.closest('.icon__heart')) {
-          var classListIc = e.target.classList
-          classListIc.contains('fa-solid') ? classListIc.replace('fa-solid', 'fa-regular') : classListIc.replace('fa-regular', 'fa-solid')
-          e.target.classList.toggle('icon__primary')
-        }
-        
+      if (songNode && !e.target.closest('.content__playmusic-item-ic')) {
+        _this.indexSong = Number(songNode.dataset.index)
+        _this.loadCurrentSong()
+        _this.renderMusic(playMusicList, _this.curIndexArraySong)
+        _this.renderMusic(contentMenuSong, _this.curIndexArraySong)
+        _this.scrollToActiveSong()
+        audio.play()
+      }
+      if (e.target.closest('.icon__micro')) {
+        e.target.classList.toggle('icon__primary')
+      }
+      if (e.target.closest('.icon__heart')) {
+        var classListIc = e.target.classList
+        classListIc.contains('fa-solid') ? classListIc.replace('fa-solid', 'fa-regular') : classListIc.replace('fa-regular', 'fa-solid')
+        e.target.classList.toggle('icon__primary')
+      }
+
     }
 
     // Xử lý sự kiện khi click vào play 
@@ -1004,7 +1004,7 @@ const app = {
         audio.volume = 0
         progessFillVolumn.style.width = 0 + '%'
         iconVolumn.classList.replace('fa-volume-high', 'fa-volume-xmark')
-        
+
       } else {
         progessVolumnSong.value = 100
         _this.isVolumeMin = false
@@ -1014,15 +1014,15 @@ const app = {
       }
     },
 
-    // Xử lý khi next bài hát
-    controlBtnNext.onclick = function () {
-      if (_this.isRandom) {
-        _this.playRandomSong()
-      } else {
-        _this.nextSong()
+      // Xử lý khi next bài hát
+      controlBtnNext.onclick = function () {
+        if (_this.isRandom) {
+          _this.playRandomSong()
+        } else {
+          _this.nextSong()
+        }
+        audio.play()
       }
-      audio.play()
-    }
 
     // Xử lý khi prev bài hát
     controlBtnPrev.onclick = function () {
@@ -1100,6 +1100,8 @@ const app = {
 
     this.indexSong = newIndex
     this.loadCurrentSong()
+    this.renderMusic(playMusicList, this.curIndexArraySong)
+    this.renderMusic(contentMenuSong, this.curIndexArraySong)
   },
 
   scrollToActiveSong: function () {
@@ -1120,9 +1122,11 @@ const app = {
   },
 
   loadConfig: function () {
-    this.loadThemeBg(this.themeKey.themeListIndex, this.themeKey.currentTheme)
-    this.isRandom = this.config.isRandom
-    this.isRepeat = this.config.isRepeat
+    var x = this.themeKey.themeListIndex || 0
+    var y = this.themeKey.currentTheme || 0
+    this.loadThemeBg(x, y)
+    this.isRandom = this.config.isRandom || false
+    this.isRepeat = this.config.isRepeat || false
   },
 
   start: function () {
@@ -1236,3 +1240,4 @@ themeContainer.addEventListener('click', (e) => {
   e.stopPropagation()
 })
 
+console.log(app.themeKey)

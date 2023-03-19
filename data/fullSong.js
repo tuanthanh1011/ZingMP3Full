@@ -1,3 +1,4 @@
+
 var listSong = [
     [
         {
@@ -125,7 +126,7 @@ var listSong = [
             singer: ["Phố Đã Lên Đèn"],
             path: "./assets/music/listSong1/song21.mp3",
             image: "./assets/img/music/listSong1/song21.jpg"
-        }
+        },
     ],
     [
         {
