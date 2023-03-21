@@ -1,39 +1,52 @@
 
 var listMV = [
     {
+        name: "Thủ đô Cypher",
+        author: ["RPT Orijinn", "LOW G", "RZMas", "RPT MCK"],
+        time: "02:54",
+        authorAvatar: "./assets/img/mvArtists/artist15.jpg",
+        image: "./assets/img/MVs/mv15.jpg",
+        path: "https://www.youtube.com/embed/yET2SBRuNm0"
+    },
+    {
         name: "Một Bước Yêu Vạn Dặm Đau",
         author: ["Mr. Siro"],
         time: "11:54",
         authorAvatar: "./assets/img/mvArtists/artist1.jpg",
-        image: "./assets/img/MVs/mv1.jpg"
+        image: "./assets/img/MVs/mv1.jpg",
+        path: "https://www.youtube.com/embed/EYJimpsoE3g"
     },
     {
         name: "Simple Love",
         author: ["Obito", "Seachains", "Davis"],
         time: "03:54",
         authorAvatar: "./assets/img/mvArtists/artist2.jpg",
-        image: "./assets/img/MVs/mv2.jpg"
+        image: "./assets/img/MVs/mv2.jpg",
+        path: "https://www.youtube.com/embed/lUrmyU1cnxU"
     },
     {
         name: "Lời Yêu Ngây Dại",
         author: ["Kha"],
         time: "04:33",
         authorAvatar: "./assets/img/mvArtists/artist3.jpg",
-        image: "./assets/img/MVs/mv3.jpg"
+        image: "./assets/img/MVs/mv3.jpg",
+        path: "https://www.youtube.com/embed/UBv-GcD3jHE"
     },
     {
         name: "24H",
         author: ["LyLy", "Magazine"],
         time: "04:18",
         authorAvatar: "./assets/img/mvArtists/artist4.jpg",
-        image: "./assets/img/MVs/mv4.jpg"
+        image: "./assets/img/MVs/mv4.jpg",
+        path: "https://www.youtube.com/embed/IpniN1Wq68Y"
     },
     {
         name: "Nước Mắt Em Lau Bằng Tình Yêu Mới",
         author: ["Da LAB", "Tóc Tiên"],
         time: "05:45",
         authorAvatar: "./assets/img/mvArtists/artist5.jpg",
-        image: "./assets/img/MVs/mv5.jpg"
+        image: "./assets/img/MVs/mv5.jpg",
+        path: "https://www.youtube.com/embed/GQ4F9k4USfA"
     },
 
     {
@@ -41,7 +54,8 @@ var listMV = [
         author: ["OnlyC", "Karik"],
         time: "05:02",
         authorAvatar: "./assets/img/mvArtists/artist6.jpg",
-        image: "./assets/img/MVs/mv6.jpg"
+        image: "./assets/img/MVs/mv6.jpg", 
+        path: "https://www.youtube.com/embed/DTosuuoN74A"
     },
     {
         name: "Phía Sau Em",

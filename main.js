@@ -7,7 +7,7 @@ const iconSetting = $('.header__navbar-ic-setting');
 const menuSetting = $('.header__navbar-item-setting');
 const searchHistory = $('.header__search-history-list')
 const iconThemeOpen = $('.header__navbar-ic-themes');
-const iconThemeClose = $('.themes__container-header-close');
+const iconThemeCloses = $$('.themes__container-header-close');
 const themeContainerBody = $('.themes__container-body');
 const themeContainer = $('.themes__container');
 const playMusicList = $('.content__playmusic-list');
@@ -60,6 +60,8 @@ const controlBtnRepeat = $('.control__btn-repeat');
 const playerTitleAnimate = $('.player__title-animate');
 const durationTime = $('.durationtime');
 const songTitleWrap = $('.player_song-title ');
+const mvDisplay = $('.mv_display');
+const playMvDisplay = $('.playMvDisplay');
 
 const THEME_STORAGE = 'THEME'
 const PLAYER__STORAGE_KEY = 'PLAYER'
@@ -238,23 +240,21 @@ const app = {
 
   //render mv
   renderMvs: function (item) {
-    item.innerHTML = this.listMvs.map((mv) => {
+    item.innerHTML = this.listMvs.map((mv, index) => {
       return app.html`
-            <div class="row__item row__column-3 mb-30">
+            <div class="row__item row__column-3 mb-30" data-index="${index}"  >
                   <div class="row__item-display">
                     <div class="overlay">
                       <div class="row__item-img img__mv" style="background: url('${mv.image}') no-repeat center/cover"></div>
-                      <div class="row__item-action">
-                      <div class="row__item-action-ic row__item-play">
-                        <i class="fa-solid fa-play"></i>
-                      </div>
-                      <div class="row__item-action-ic row-item-close">
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                      <div class="row__item-mv--time">
-                        <span>${mv.time}</span>
-                      </div>
-                    </div>
+                        <div class="row__item-action-ic row__item-play row__item-action row__item-play-mv">
+                          <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="row__item-action-ic row-item-close">
+                          <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <div class="row__item-mv--time">
+                          <span>${mv.time}</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row__item-inf row__item-inf-mv">
@@ -703,6 +703,17 @@ const app = {
     _this.playMusicItems = $$('.content__playmusic-item');
     const listThemes = $$('.themes__container-body .themes__container-item')
     const contentPlayMusicItemIc = $$('.content__playmusic-item-ic');
+    const playMvs = $$('.row__item-play-mv');
+
+    // //Xử lý việc chạy mv
+    // playMvs.forEach((playMv) => {
+    //   playMv.onclick = function () {
+    //     mvDisplay.classList.add('show')
+    //     const mvCurrently = _this.getParentElement(playMv, 'row__item').dataset.index
+    //     console.log(mvCurrently)
+    //     playMvDisplay.src = _this.listMvs[mvCurrently].path
+    //   }
+    // })
 
     contentPlayMusicItemIc.forEach((item) => {
       item.onclick = function (e) {
@@ -1227,8 +1238,10 @@ iconThemeOpen.addEventListener('click', (e) => {
   themeWrap.classList.add('show')
 })
 
-iconThemeClose.addEventListener('click', (e) => {
-  themeWrap.classList.remove('show')
+iconThemeCloses.forEach((iconThemeClose) => {
+  iconThemeClose.addEventListener('click', (e) => {
+    app.getParentElement(iconThemeClose, 'themes').classList.remove('show')
+  })
 })
 
 themeWrap.addEventListener('click', (e) => {
@@ -1239,5 +1252,3 @@ themeWrap.addEventListener('click', (e) => {
 themeContainer.addEventListener('click', (e) => {
   e.stopPropagation()
 })
-
-console.log(app.themeKey)

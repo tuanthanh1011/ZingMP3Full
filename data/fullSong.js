@@ -2,6 +2,12 @@
 var listSong = [
     [
         {
+            name: "Thiên thần ác quỷ",
+            singer: ["Low G"],
+            path: "./assets/music/listSong1/song22.mp3",
+            image: "./assets/img/music/listSong1/song22.jpg"
+        },
+        {
             name: "Cứ Chill Thôi",
             singer: ["Chillies", "Suni Hạ Linh", "Rhymastic"],
             path: "./assets/music/listSong1/song1.mp3",
